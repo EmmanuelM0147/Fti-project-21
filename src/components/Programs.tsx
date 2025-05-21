@@ -26,7 +26,7 @@ const courses: Course[] = [
     description: 'Construction Technologies enhance efficiency and safety in construction through innovative digital solutions.',
     duration: '2 years',
     level: "Advanced Diploma",
-    image: 'https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302102/Fur_bldbyp.jpg'
+    image: 'https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302189/Welding_b1y9ue.jpg'
   }
 ];
 
