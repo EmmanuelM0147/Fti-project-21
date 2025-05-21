@@ -105,14 +105,14 @@ export default function Hero({ onApplyClick }: HeroProps) {
             </motion.div>
             <div className="mt-8 lg:mt-0">
               <img 
-                src="https://res.cloudinary.com/dtzv2ckwm/image/upload/v1747841581/ae174457-7bf4-4911-b9a3-1cce89b1bcf5_x3zyz3.jpg"
-                alt="Students collaborating in a modern tech environment with hands-on circuit board work"
+                src="https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302102/Fur_bldbyp.jpg"
+                alt="Students collaborating in a modern tech environment with hands-on wood work"
                 className="w-full h-48 sm:h-72 md:h-96 object-cover rounded-lg lg:h-full"
                 loading="lazy"
                 srcSet="
-                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1747841581/ae174457-7bf4-4911-b9a3-1cce89b1bcf5_x3zyz3.jpg 800w,
-                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1747841581/ae174457-7bf4-4911-b9a3-1cce89b1bcf5_x3zyz3.jpg 1200w,
-                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1747841581/ae174457-7bf4-4911-b9a3-1cce89b1bcf5_x3zyz3.jpg 2070w
+                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302102/Fur_bldbyp.jpg 800w,
+                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302102/Fur_bldbyp.jpg 1200w,
+                  https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302102/Fur_bldbyp.jpg 2070w
                 "
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
