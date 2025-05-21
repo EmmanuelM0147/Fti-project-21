@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Reset and Base Styles */
+@layer base {
+  /* Box sizing rules */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Remove default margin and padding */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Set core body defaults */
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Source Sans Pro', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Make images easier to work with */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Inherit fonts for inputs and buttons */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Theme variables */
+  :root {
+    color-scheme: light dark;
+    
+    /* Theme transition duration */
+    --theme-transition-duration: 300ms;
+    
+    /* Theme colors */
+    --color-primary: theme('colors.blue.600');
+    --color-primary-dark: theme('colors.blue.500');
+    --color-text: theme('colors.gray.700');
+    --color-text-dark: theme('colors.gray.300');
+    --color-background: theme('colors.white');
+    --color-background-dark: theme('colors.gray.900');
+    --color-border: theme('colors.gray.200');
+    --color-border-dark: theme('colors.gray.700');
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid theme('colors.blue.500');
+    outline-offset: 2px;
+  }
+
+  /* Touch target sizing */
+  @media (pointer: coarse) {
+    button,
+    [role="button"],
+    [type="button"],
+    [type="submit"],
+    [type="reset"] {
+      min-height: 44px;
+      min-width: 44px;
+      padding: 0.75rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      min-height: 44px;
+      padding: 0.75rem;
+    }
+  }
+
+  /* Safe area insets for modern iOS devices */
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: min(0vmin, env(safe-area-inset-left));
+      padding-right: min(0vmin, env(safe-area-inset-right));
+      padding-bottom: min(0vmin, env(safe-area-inset-bottom));
+    }
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Improved touch targets for mobile */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px] p-3;
+  }
+
+  /* Fluid typography */
+  .text-fluid-sm {
+    font-size: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  }
+
+  .text-fluid-base {
+    font-size: clamp(1rem, 0.925rem + 0.375vw, 1.125rem);
+  }
+
+  .text-fluid-lg {
+    font-size: clamp(1.125rem, 1.05rem + 0.375vw, 1.25rem);
+  }
+
+  .text-fluid-xl {
+    font-size: clamp(1.25rem, 1.175rem + 0.375vw, 1.5rem);
+  }
+
+  .text-fluid-2xl {
+    font-size: clamp(1.5rem, 1.375rem + 0.625vw, 1.875rem);
+  }
+
+  /* Improved focus outlines */
+  .focus-outline {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900;
+  }
+}
+
+/* Shepherd.js custom styles */
+.shepherd-theme-custom {
+  --shepherd-bg: #fff;
+  --shepherd-text: #1a202c;
+  --shepherd-border: #e2e8f0;
+  --shepherd-button-primary-bg: #1E3A8A;
+  --shepherd-button-primary-text: #fff;
+  --shepherd-button-primary-hover: #1e40af;
+  --shepherd-button-secondary-bg: #f3f4f6;
+  --shepherd-button-secondary-text: #374151;
+  --shepherd-button-secondary-hover: #e5e7eb;
+}
+
+.dark .shepherd-theme-custom {
+  --shepherd-bg: #1f2937;
+  --shepherd-text: #f9fafb;
+  --shepherd-border: #374151;
+  --shepherd-button-primary-bg: #3b82f6;
+  --shepherd-button-primary-text: #fff;
+  --shepherd-button-primary-hover: #2563eb;
+  --shepherd-button-secondary-bg: #374151;
+  --shepherd-button-secondary-text: #f9fafb;
+  --shepherd-button-secondary-hover: #4b5563;
+}
+
+.shepherd-theme-custom .shepherd-content {
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--shepherd-border);
+  background: var(--shepherd-bg);
+  color: var(--shepherd-text);
+  max-width: 400px;
+}
+
+.shepherd-theme-custom .shepherd-text {
+  padding: 1.25rem;
+  line-height: 1.5;
+}
+
+.shepherd-theme-custom .shepherd-footer {
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--shepherd-border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.shepherd-theme-custom .shepherd-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.shepherd-theme-custom .shepherd-button-primary {
+  background: var(--shepherd-button-primary-bg);
+  color: var(--shepherd-button-primary-text);
+}
+
+.shepherd-theme-custom .shepherd-button-primary:hover {
+  background: var(--shepherd-button-primary-hover);
+}
+
+.shepherd-theme-custom .shepherd-button-secondary {
+  background: var(--shepherd-button-secondary-bg);
+  color: var(--shepherd-button-secondary-text);
+  margin-right: 0.5rem;
+}
+
+.shepherd-theme-custom .shepherd-button-secondary:hover {
+  background: var(--shepherd-button-secondary-hover);
+}
+
+.shepherd-theme-custom .shepherd-cancel-icon {
+  color: var(--shepherd-text);
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.shepherd-theme-custom .shepherd-cancel-icon:hover {
+  opacity: 1;
+}
+
+.shepherd-theme-custom .shepherd-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.shepherd-theme-custom .shepherd-header {
+  padding: 1.25rem 1.25rem 0;
+}
+
+.shepherd-theme-custom .shepherd-element[data-popper-placement^="top"] .shepherd-arrow {
+  border-bottom-color: var(--shepherd-bg);
+}
+
+.shepherd-theme-custom .shepherd-element[data-popper-placement^="bottom"] .shepherd-arrow {
+  border-top-color: var(--shepherd-bg);
+}
+
+.shepherd-theme-custom .shepherd-element[data-popper-placement^="left"] .shepherd-arrow {
+  border-right-color: var(--shepherd-bg);
+}
+
+.shepherd-theme-custom .shepherd-element[data-popper-placement^="right"] .shepherd-arrow {
+  border-left-color: var(--shepherd-bg);
+}
