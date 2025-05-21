@@ -18,7 +18,7 @@ const courses: Course[] = [
     description: 'Hands-on training for practical skills, preparing individuals for career-focused industries.',
     duration: '2 years',
     level: "Advanced Diploma",
-    image: 'https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302665/Plumbling_zodckw.jpg'
+    image: 'https://res.cloudinary.com/dtzv2ckwm/image/upload/v1746302162/Knitting_udffuy.jpg'
   },
   {
     id: '3',
