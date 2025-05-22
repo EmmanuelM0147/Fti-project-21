@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
       { title: "Give", href: "/give" }
     ]
   },
-{ title: "DevCareer", href: "/career-development" },
+  { title: "DevCareer", href: "/career-development" },
   { title: "Contact", href: "#contact" },
 ];
 
@@ -270,13 +270,13 @@ export function Navigation() {
                   </AnimatePresence>
                 </div>
               ) : (
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 flex-nowrap">
                   <button
                     onClick={() => {
                       setAuthMode('signin');
                       setShowAuthDialog(true);
                     }}
-                    className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors"
+                    className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors whitespace-nowrap"
                   >
                     Sign In
                   </button>
@@ -285,7 +285,7 @@ export function Navigation() {
                       setAuthMode('signup');
                       setShowAuthDialog(true);
                     }}
-                    className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
+                    className="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors whitespace-nowrap"
                   >
                     Sign Up
                   </button>
